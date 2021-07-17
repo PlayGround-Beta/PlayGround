@@ -49,21 +49,21 @@
     
             <aside>広告</aside>
             
-            <div class="comment_confirmation">
-                <p class="modal_title" >この投稿にコメントしますか？</p>
-                <p class="post_content"><?= nl2br($post['text']) ?></p>
-                <form method="post" action="../comment/comment_add_done.php" enctype="multipart/form-data">
-                    <textarea class="textarea form-control" placeholder="コメントを入力ください" name="text"></textarea>
-                    <div class="comment_img">
-                        <input type="file" name="image_name" class="comment_image" accept="image/*" multiple>
-                    </div>
-                    <input type="hidden" name="id" value="<?= $post['id'] ?>">
-                    <div class="post_btn">
-                        <button class="btn btn-outline-danger" type="submit" name="comment" value="comment">コメント</button>
-                        <button class="btn btn-outline-primary modal_close" type="button">キャンセル</button>
-                    </div>
-                </form>
-            </div>
+            <!--ここから掲示板開始!-->
+<form action="s.php" method="post"><table><tr>
+    <th>ネーム</th><td><input type="text" name="name" size="20"></td></tr><tr>
+    <th>記事</th><td><textarea name="txt" rows="2" cols="20" tabindex="0"></textarea></td></tr>
+    </table><input type="submit" value="投稿"></form>
+    <br>
+    <?php
+    $log = 5; //表示するログの数初期は、5
+    $fp = fopen('log.html', 'r');
+    for($i=0; $i < $log; $i++){
+    $fps = fgets($fp);
+    print $fps;
+    }
+    ?>
+    <!--ここから掲示板終了-->
             
             <!--コメント-->
         </div>
