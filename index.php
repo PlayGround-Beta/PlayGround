@@ -55,14 +55,7 @@
     <th>記事</th><td><textarea name="txt" rows="2" cols="20" tabindex="0"></textarea></td></tr>
     </table><input type="submit" value="投稿"></form>
     <br>
-    <?php
-    $log = 5; //表示するログの数初期は、5
-    $fp = fopen('log.html', 'r');
-    for($i=0; $i < $log; $i++){
-    $fps = fgets($fp);
-    print $fps;
-    }
-    ?>
+    
     <!--ここから掲示板終了-->
             
             <!--コメント-->
