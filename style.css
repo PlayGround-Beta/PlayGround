@@ -83,3 +83,51 @@ ul, li {
    color: rgb(112, 111, 111);
  }
 
+.button{
+    color: #fff;
+    background: #2c366d;
+    border: 2px solid #2c366d;
+    padding: 0 40px;
+    line-height: 40px;
+    font-size: 21px;
+    margin: 10px;
+    outline: 0;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+
+}
+  
+.button::after{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.5);
+}
+
+.button:hover {
+    color:  #46BED6;
+    
+    border-color:  #46BED6;
+}
+
+.button:hover::after{
+    background: #FFF;
+    transform: scale(1);
+}
+
+.button,
+.button::before,
+.button::after{
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+.button::before, 
+.button::after{
+     content: "";
+      display: block;
+       position: absolute;
+        z-index: -1; 
+    }
